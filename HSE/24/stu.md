@@ -1,7 +1,7 @@
 # Projects
 
 
-For each project write the [[ru:hse:rnet:rep|report]] and add the files with programs and constructed data sets (except for very large data). Pack everything in a ZIP file. Send the ZIPs for Project 1 and Project 2 to **vladimir.batagelj@fmf.uni-lj.si**, and for Project 3 to **luka.kronegger@fdv.uni-lj.si** till  **November 18th, 2024**.
+For each project write the [[ru:hse:rnet:rep|report]] and add the files with programs and constructed data sets (except for very large data). Pack everything in a ZIP file. Send the ZIPs for Project 1 and Project 2 to **vladimir.batagelj@fmf.uni-lj.si**, and for Project 3 to **luka.kronegger@fdv.uni-lj.si** till  ** ???????? **.
 
 
 ## Project 1 

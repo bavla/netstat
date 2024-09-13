@@ -6,7 +6,7 @@ For each project write the [[ru:hse:rnet:rep|report]] and add the files with pro
 
 ## Project 1 
 
-Solve the [[ru:hse:snet22:problems|problem]]   with your [[students|number]] with the Monte Carlo method. If you are able to solve it also theoretically compare both results.
+Solve the [[ru:hse:snet22:problems|problem]]   with your [number](list.md) with the Monte Carlo method. If you are able to solve it also theoretically compare both results.
 
 ## Project 2 
 

@@ -34,7 +34,7 @@ Select an **undirected labeled** network with at least 50 nodes and average degr
 
 ## Project 3 
 
-You will work on data that you choose from the list of networks available in [[http://www.mjdenny.com/Network_Data/Statnet_Data.Rdata|Statnet Data]].  Find the panel data measured in at least two waves (you don't need to choose the first two). Your task is to build ERGM for the first chosen wave and SAOM for the two waves.
+You will work on data that you choose from the list of networks available in [Statnet Data](http://www.mjdenny.com/Network_Data/Statnet_Data.Rdata).  Find the panel data measured in at least two waves (you don't need to choose the first two). Your task is to build ERGM for the first chosen wave and SAOM for the two waves.
 Models have to model clustering and homophily by selected "node level" variable. Then you need to assess the GOF too.
 
 Respond to the following questions:

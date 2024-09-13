@@ -51,21 +51,21 @@ A [standard deck of cards](https://en.wikipedia.org/wiki/Standard_52-card_deck) 
 To get two characters card codes I replaced the number 10 with the roman numeral X.
 
 To shuffle the deck use
-<code>
+```
 > deck <- sample(deck)
 > deck
  [1] "8♦" "7♣" "K♣" "5♠" "2♣" "9♦" "6♦" "X♥" "J♣" "5♥" "K♥" "3♥" "Q♣"
 [14] "J♥" "4♣" "9♥" "5♣" "2♥" "A♦" "J♠" "A♥" "Q♠" "4♦" "9♠" "A♣" "6♥"
 [27] "3♣" "3♠" "8♠" "8♥" "4♥" "X♦" "A♠" "6♠" "5♦" "Q♥" "8♣" "7♥" "K♦"
 [40] "7♦" "7♠" "9♣" "4♠" "K♠" "6♣" "3♦" "Q♦" "X♠" "2♦" "2♠" "X♣" "J♦"
-</code>
+```
 and to find the position of selected card(s) use
-<code>
+```
 > grep("Q♥",deck)
 [1] 36
 > grep("A",deck)
 [1] 19 21 25 33
-</code>
+```
 
 [netStat](../2024.md) ; [Projects](stu.md)
 

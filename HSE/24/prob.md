@@ -38,7 +38,7 @@ Another criterion is that one of the pairs of segments  (AB,CD), (AD,BC), (AC,BD
 ## Hint 2 
 
 A [standard deck of cards](https://en.wikipedia.org/wiki/Standard_52-card_deck) can be created as follows
-<code>
+```
 > suits <- c("♣", "♦", "♥", "♠")
 > ranks <- c(2:9,"X", "J", "Q", "K", "A")
 > deck <- as.vector(outer(ranks,suits,"paste",sep=""))
@@ -47,7 +47,7 @@ A [standard deck of cards](https://en.wikipedia.org/wiki/Standard_52-card_deck) 
 [14] "2♦" "3♦" "4♦" "5♦" "6♦" "7♦" "8♦" "9♦" "X♦" "J♦" "Q♦" "K♦" "A♦"
 [27] "2♥" "3♥" "4♥" "5♥" "6♥" "7♥" "8♥" "9♥" "X♥" "J♥" "Q♥" "K♥" "A♥"
 [40] "2♠" "3♠" "4♠" "5♠" "6♠" "7♠" "8♠" "9♠" "X♠" "J♠" "Q♠" "K♠" "A♠"
-</code>
+```
 To get two characters card codes I replaced the number 10 with the roman numeral X.
 
 To shuffle the deck use

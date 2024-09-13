@@ -44,4 +44,4 @@ Respond to the following questions:
 
 \\
 
-[[ru:hse:snet22|Snet]] 
+[netStat](../2024.md)

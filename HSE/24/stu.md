@@ -20,7 +20,9 @@ or **Task B**:
 
 On a **labeled** network of your choice with **at least 15 nodes** and a measured node property (attribute) either
   * Compute Geary's and Moran's measure.
+    
 or for a selected network property
+
   * Make a CUG or QAP test. 
 
 Interpret the obtained results.

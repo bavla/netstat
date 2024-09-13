@@ -67,14 +67,6 @@ and to find the position of selected card(s) use
 [1] 19 21 25 33
 </code>
 
-<HTML><!--
-https://demonstrations.wolfram.com/ConcaveRandomQuadrilateralsFromFourPointsInADisk/
+[netStat](../2024.md) ; [Projects](stu.md)
 
-17. 53/5 = 10.6 
-   https://www.quora.com/What-is-the-expected-number-of-cards-that-need-to-be-turned-over-in-a-regular-52-card-deck-in-order-to-see-the-first-ace
---></HTML>
-
-\\
-
-[[ru:hse:snet22:stu|Snet projects]] 
 

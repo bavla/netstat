@@ -13,7 +13,7 @@ Solve the [problem](prob.md)   with your [number](list.md)+10 with the Monte Car
 
 Do either the **Task A**:
 
-Transform the data from a selected data source into a Markov chain transition matrix with **at least 15 states** and analyze it.
+Transform the data from a selected data source into a Markov chain transition matrix with **at least 15 states** and **analyze it**.
 For example, the transition matrix from a given text (project Gutenberg) that is determined by consecutive letter pairs.
 
 or **Task B**:

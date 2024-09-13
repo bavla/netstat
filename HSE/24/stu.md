@@ -1,7 +1,7 @@
 # Projects
 
 
-For each project write the [report](rep.md) and add the files with programs and constructed data sets (except for very large data). Pack everything in a ZIP file. Send the ZIPs for Project 1 and Project 2 to **vladimir.batagelj@fmf.uni-lj.si**.
+For each project write the [report](rep.md) and add the files with programs and constructed data sets (except for very large data). Pack everything in a ZIP file. Send the ZIPs for Project 1 and Project 2 to **vladimir.batagelj@fmf.uni-lj.si** till **October 20, 2024**.
 
 
 ## Project 1 

@@ -1,12 +1,12 @@
 # Projects
 
 
-For each project write the [[ru:hse:rnet:rep|report]] and add the files with programs and constructed data sets (except for very large data). Pack everything in a ZIP file. Send the ZIPs for Project 1 and Project 2 to **vladimir.batagelj@fmf.uni-lj.si**, and for Project 3 to **luka.kronegger@fdv.uni-lj.si** till  ** ???????? **.
+For each project write the [report](rep.md) and add the files with programs and constructed data sets (except for very large data). Pack everything in a ZIP file. Send the ZIPs for Project 1 and Project 2 to **vladimir.batagelj@fmf.uni-lj.si**, and for Project 3 to **luka.kronegger@fdv.uni-lj.si** till  ** ???????? **.
 
 
 ## Project 1 
 
-Solve the [[ru:hse:snet22:problems|problem]]   with your [number](list.md) with the Monte Carlo method. If you are able to solve it also theoretically compare both results.
+Solve the [problem](prob.md)   with your [number](list.md)+10 with the Monte Carlo method. For example, student with number 3 has to solve the problem 13. If you are able to solve it also theoretically compare both results.
 
 ## Project 2 
 

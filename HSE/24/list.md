@@ -15,5 +15,5 @@
 |  11 | Силина Ксения                    |
 
 
-[netStat](../README.md) ; [Projects](stu.md)
-list.md
+[netStat](../2024.md) ; [Projects](stu.md)
+

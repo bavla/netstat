@@ -8,7 +8,7 @@
     * summary
     * references and links to external sources
 
-Avoid redundant/"garbage" printouts - for example: messages of attached libraries.
+Avoid very long or redundant/"garbage" printouts - for example: messages of attached libraries.
 
 
 [netStat](../2024.md) ; [Projects](stu.md)

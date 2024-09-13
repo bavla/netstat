@@ -42,6 +42,4 @@ Respond to the following questions:
   - Which micro-mechanisms shape the evolution of your selected network?
 
 
-\\
-
 [netStat](../2024.md)

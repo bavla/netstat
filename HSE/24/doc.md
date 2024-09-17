@@ -26,4 +26,4 @@ In the code on the slides, LaTeX replaces ' with ´ - pay attention if copying c
   1. [Code from Statistics](http://vladowiki.fmf.uni-lj.si/doku.php?id=ru:hse:snet:csnet6)
 
 
-[[ru:hse:snet22|Snet]] 
+[netStat](../2024.md) 

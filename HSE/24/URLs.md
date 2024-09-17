@@ -1,5 +1,11 @@
 # Links 
 
+## Software 
+
+  * [Netlogo](http://ccl.northwestern.edu/netlogo/)
+
+
+
 ## Books 
 
   - Ton Coolen, Alessia Annibale, Ekaterina Roberts: Generating random networks and graphs. 

@@ -363,9 +363,20 @@ Unpack in ''/rivers'' the data from [Data set](pajek:data:conv:pitts).
 > x <- pitts %v% "x"; y <- pitts %v% "y"
 ```
 
-{{ru:hse:snet:pics:brjansk.jpg?200}} {{ru:hse:snet:pics:dorogobuz.jpg?200}} {{ru:hse:snet:pics:elec.jpg?200}} {{ru:hse:snet:pics:murom.jpg?200}} 
+{{ru:hse:snet:pics:.jpg?200}} {{ru:hse:snet:pics:dorogobuz.jpg?200}} {{ru:hse:snet:pics:elec.jpg?200}} {{ru:hse:snet:pics:murom.jpg?200}} 
 
 {{ru:hse:snet:pics:smolensk.jpg?200}} {{ru:hse:snet:pics:velikij_novgorod.jpg?200}} {{ru:hse:snet:pics:vjazma.jpg?200}} {{ru:hse:snet:pics:vladimir.jpg?200}}
+
+<img src="https://github.com/bavla/netstat/blob/master/HSE/24/pics/brjansk.jpg" width=200>
+<img src="https://github.com/bavla/netstat/blob/master/HSE/24/pics/Dorogobuz.jpg" width=200>
+<img src="https://github.com/bavla/netstat/blob/master/HSE/24/pics/Elec.jpg" width=200>
+<img src="https://github.com/bavla/netstat/blob/master/HSE/24/pics/Murom.jpg" width=200>
+
+<img src="https://github.com/bavla/netstat/blob/master/HSE/24/pics/Smolensk.jpg" width=200>
+<img src="https://github.com/bavla/netstat/blob/master/HSE/24/pics/Velikij_Novgorod.jpg" width=200>
+<img src="https://github.com/bavla/netstat/blob/master/HSE/24/pics/Vjazma.jpg" width=200>
+<img src="https://github.com/bavla/netstat/blob/master/HSE/24/pics/Vladimir.jpg" width=200>
+
 
 ### Binary
 

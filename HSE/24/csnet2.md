@@ -17,7 +17,7 @@
 
 ## Semiring library
 
-[[https://github.com/bavla/semirings/|Github / semirings]]
+[Github / semirings](https://github.com/bavla/semirings/)
 
 ### Library
 
@@ -250,11 +250,11 @@ Two missionaries and two cannibals reach the left bank of a river simultaneously
 </code>
 --></html>
 
-[[notes:net:allp|All paths]] in Python.
+[All paths](notes:net:allp) in Python.
 
 ## Betweenness 
 
-[[https://github.com/bavla/semirings/|Github / Betweenness]]
+[Github / Betweenness](https://github.com/bavla/semirings/)
 
 ```
 > mat.geodesics <- function(m)
@@ -351,7 +351,7 @@ $cnt
 
 ## Pitts Russian Rivers
 
-Unpack in ''/rivers'' the data from [[pajek:data:conv:pitts|Data set]].
+Unpack in ''/rivers'' the data from [Data set](pajek:data:conv:pitts).
 ```
 > library(sna)
 > setwd("C:/Users/batagelj/Documents/papers/2018/moskva/NetR/nets/rivers")
@@ -602,7 +602,7 @@ S6  0 0.0 0.0 0.0 0.0 0.0
 Rows with sum different from 1; zero sum. 
 
 Kelvin Lancaster: Mathematical Economics.
-[[https://www.amazon.com/Mathematical-Economics-Dover-Computer-Science/dp/0486653919|Dover]], 2011
+[Dover](https://www.amazon.com/Mathematical-Economics-Dover-Computer-Science/dp/0486653919), 2011
 
 ```
 > P1[5,1] <- 1.18
@@ -675,7 +675,7 @@ Kelvin Lancaster: Mathematical Economics.
 
 ### Data 
 
-Pics: [[http://vladowiki.fmf.uni-lj.si/lib/exe/fetch.php?media=ru:hse:snet:pics:roberts1.jpg|Roberts1]]; [[http://vladowiki.fmf.uni-lj.si/lib/exe/fetch.php?media=ru:hse:snet:pics:roberts2.jpg|Roberts2]]
+Pics: [Roberts1](https://github.com/bavla/netstat/blob/master/HSE/24/pics/Roberts1.jpg); [Roberts2](https://github.com/bavla/netstat/blob/master/HSE/24/pics/Roberts2.jpg)
  
 ```
 > setwd("C:/Users/batagelj/Documents/papers/2018/moskva/NetR/nets")
@@ -929,7 +929,7 @@ L5 0.3333333 0.6666667
 L6 0.6666667 0.3333333 
 ```
 
-R package [[https://cran.r-project.org/web/packages/markovchain/|markovchain]].
+R package [markovchain](https://cran.r-project.org/web/packages/markovchain/).
 
 
 ### To do

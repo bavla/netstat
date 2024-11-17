@@ -66,7 +66,7 @@ triad.census(samplk3,mode="graph") # Undirected triad census
 
 ## Orca
 
-{{ru:hse:snet:pics:graphlets.png?700}}
+<img src="https://github.com/bavla/netstat/blob/master/HSE/24/pics/graphlets.png" width=700>
 
 A graphlet census of a given graph can be computed using program [[http://www.biolab.si/supp/orca/|orca]]. Download the ''orca.zip'' file and extract the compiled version for windows ''orca.exe'' into directory of your choice ''orcaDir''. Details about the program orca are available in the  [[https://academic.oup.com/bioinformatics/article/30/4/559/205331|paper]].
 

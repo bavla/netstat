@@ -596,7 +596,7 @@ Approximating a distribution F by the sample
 
 <hr/>
 
-[HSE](../README.md); [Docs](docs.md)
+[HSE](../2024.md); [Docs](docs.md)
 
 
 

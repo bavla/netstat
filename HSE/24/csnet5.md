@@ -1,12 +1,12 @@
-# ====== Statistics ======
+# Statistics 
 
 
 
 
 
-===== Combinatorics =====
+## Combinatorics
 
-<code>
+```
 > combn(letters[1:4], 2)
      [,1] [,2] [,3] [,4] [,5] [,6]
 [1,] "a"  "a"  "a"  "b"  "b"  "c" 
@@ -28,7 +28,7 @@ package ‘combinat’ successfully unpacked and MD5 sums checked
 
 [[3]]
 [1] "a" "d" "b" "c"
-</code>
+```
 https://www.topcoder.com/blog/generating-combinations/
 
 https://www.geeksforgeeks.org/heaps-algorithm-for-generating-permutations/
@@ -36,7 +36,7 @@ https://www.geeksforgeeks.org/heaps-algorithm-for-generating-permutations/
 https://www.topcoder.com/blog/generating-permutations/
 
 
-<code>
+```
 > startSubsets <- function(n){.n <<- n; .s <<- -1}
 > 
 > nextSubset <- function(){
@@ -58,11 +58,11 @@ https://www.topcoder.com/blog/generating-permutations/
 { a c }
 { b c }
 { a b c }
-</code>
+```
 
 [[https://www4.uwsp.edu/math/nwodarz/Math209Files/209-0809F-L10-Section06_03-AlgorithmsForGeneratingPermutationsAndCombinations-Notes.pdf|Permutations]] in increasing lexicographic order.
 
-<code>
+```
 > startPerm <- function(n){.n <<- n; .s <<- 1:n; .first <<- TRUE }
 > startPerm <- function(n){.n <<- n; .s <<- 1:n; .first <<- TRUE }
 > nextPerm <- function(){
@@ -104,17 +104,15 @@ https://www.topcoder.com/blog/generating-permutations/
 23 4 3 1 2 
 24 4 3 2 1 
 NULL
-> 
-
-</code>
+```
 
 https://blogs.msdn.microsoft.com/gpalem/2013/03/28/make-vectorize-your-friend-in-r/
 
-===== Autocorrelation =====
+## Autocorrelation
 
-==== Simple example ====
+### Simple example
 
-<code>
+```
 > library(statnet)
 > g <- c(
 +   0, 1, 0,  1, 0, 0,  0, 0, 0,
@@ -152,11 +150,11 @@ https://blogs.msdn.microsoft.com/gpalem/2013/03/28/make-vectorize-your-friend-in
 > nacf(G,a3,type="moran",mode="graph")[2]
      1 
 -0.875 
-</code>
+```
 
-==== Florentine families ====
+### Florentine families
 
-<code>
+```
 > library(statnet)
 > data(florentine)
 > fw <- flomarriage %v% "wealth"
@@ -184,15 +182,15 @@ https://blogs.msdn.microsoft.com/gpalem/2013/03/28/make-vectorize-your-friend-in
 > C[2]
        1 
 1.683607 
-</code>
+```
 
 
 
 
 
-===== CUG =====
+## CUG
 
-<code>
+```
 > library(statnet)
 > data(florentine)
 > rSize <- cug.test(flobusiness,centralization,
@@ -236,11 +234,11 @@ Dyads   0.2057143      0.738   0.263
 > plot(rEdges, main="Betweenness \nConditioned on Edges" )
 > plot(rDyad, main="Betweenness \nConditioned on Dyads" )
 > par(mfrow=c(1,1))
-</code>
+```
 
-===== QAP =====
+## QAP
 
-<code>
+```
 > help(qaptest)
 > gcor(flobusiness,flomarriage)
 [1] 0.3718679
@@ -255,12 +253,11 @@ Estimated p-values:
 
 > 
 > plot(rCor, xlim=c(-0.25, 0.4))
-</code>
-===== Preparing data =====
+```
 
-<html><!--
-[[http://thomasgrund.weebly.com/teaching.html|Grund]]
---></html>
+## Preparing data
+
+
 C:\Users\batagelj\Documents\papers\2018\moskva\NetR\doc\R\grund\
 
 
@@ -271,7 +268,7 @@ http://thomasgrund.weebly.com/teaching.html
 --></html>
 The LGang data includes attributes and the co-offending network of a youth gang. Data were collected by James Densley (Metropolitan University) and Thomas Grund (UCD).
 
-<code>
+```
 > setwd("C:/Users/batagelj/Documents/papers/2018/moskva/NetR/nets")
 > library(sna)
 > list.files()
@@ -303,11 +300,11 @@ The LGang data includes attributes and the co-offending network of a youth gang.
 > plot(LG.net,vertex.col="prison")
 > prisonsize<- 1 + LG.net %v% "prison"  # display as vertex size
 > plot(LG.net, vertex.cex=prisonsize, vertex.col="ethnicity")
-</code>
+```
 
-===== Changes of transitivity with density =====
+## Changes of transitivity with density
 
-<code>
+```
 > # changes for different densities
 > (d<-seq(from=0.05,to=0.85,by=0.1))
 [1] 0.05 0.15 0.25 0.35 0.45 0.55 0.65 0.75 0.85
@@ -340,14 +337,14 @@ The LGang data includes attributes and the co-offending network of a youth gang.
 +       return(temp)
 +   })
 > beanplot(dat, names=d, what=c(1,1,1,0))
-</code>
+```
 
-===== Testing =====
-==== Transitivity ====
+## Testing
+### Transitivity
 
 Are there fewer unclosed triangles in the LGang network than one would expect by chance, given the size and number of edges that are there?
 
-<code>
+```
 > (LG.trans <- gtrans(LG.net))
 [1] 0.3635371
 > (LG.density <- gden(LG.net))
@@ -384,11 +381,11 @@ Pr(X>=Obs): 0
 Pr(X<=Obs): 1 
 
 > plot(cg)
-</code>
+```
 
 The probability for a random network with the same number of edges as the LGang network to have more triangles than the LGang network is practically 0. So, relative to a random network with the same amount of edges there would appear to be high clustering in the LGang network.
 
-<code>
+```
 > cg2 <- cug.test(LG.net,gtrans,cmode="dyad.census")
 > cg2
 
@@ -404,11 +401,11 @@ Pr(X>=Obs): 0
 Pr(X<=Obs): 1 
 
 > plot(cg2)
-</code>
+```
 
-===== Permutation test QAP =====
+## Permutation test QAP
 
-<code>
+```
 > ety <- get.vertex.attribute(LG.net,"ethnicity")
 > ety
  [1] "West Africa" "Caribbean"   "Caribbean"   "Caribbean"   "Caribbean"   "UK"          "East Africa"
@@ -475,10 +472,10 @@ Test Diagnostics:
                 Max:     0.1354767 
 
 > plot(qap)
-</code>
+```
 Our actual test-statistic (here, correlation) is much higher than what we would see if we were to scramble the network.
 
-<code>
+```
 > Netr1<-rgraph(100, tprob=0.1)
 > Netr2<-rgraph(100, tprob=0.5)
 > plot(network(Netr1))
@@ -504,12 +501,12 @@ Test Diagnostics:
                 Max:     0.03562371 
 
 > plot(qap)
-</code>
+```
 Our observed correlation falls right into the distribution of correlations we would expect by chance, controlling for the underlying structure. Hence, the correlation between the two random networks is not significant.
 
-===== Regression =====
+## Regression
 
-<code>
+```
 > ties <- as.matrix(LG.net)
 > diag(ties) <- NA
 > ties <- ties[upper.tri(ties)]
@@ -554,10 +551,10 @@ AIC: 868.48
 Number of Fisher Scoring iterations: 5
 
 >
-</code>
+```
  The null hypothesis is that networks are random with the right number of edges (so the dyads are independent). The x1 estimate (=beta coefficient) is positive  at 0.85 and this effect is significant with p = 4.14...e-06 = very small p. Basically, the regression says that a tie between two gang members is Exp(b) = 2.34 times more likely when the two gang members have the same ethnicity. There is clear evidence for ethnic homophily in co-offending.
 
-<code>
+```
 help(netlogit)
 > dyQap <- netlogit(LG.net,Mety,mode="graph",nullhyp="qapy",reps=100)
 > dyQap
@@ -581,18 +578,17 @@ Pseudo-R^2 Measures:
         (Dn-Dr)/Dn: 0.5642268 
 
 > 
+```
 
-
-</code>
-==== Interactive coordinates ====
-
-<code>
-> xy <- gplot(LG.net,displaylabels=TRUE,label.cex=0.7,usearrows=FALSE,interactive=TRUE)
-> gplot(LG.net,coord=xy,displaylabels=TRUE,label.cex=0.7,usearrows=FALSE)
-</code>
-
+### Interactive coordinates
 
 ```
+> xy <- gplot(LG.net,displaylabels=TRUE,label.cex=0.7,usearrows=FALSE,interactive=TRUE)
+> gplot(LG.net,coord=xy,displaylabels=TRUE,label.cex=0.7,usearrows=FALSE)
+```
+
+
+
 
 <hr/>
 

@@ -14,8 +14,7 @@ dyad.census(network(samplk3,gmode="graph") # No As in undirected graphs
 
 ## Triadic census
 
-{{ru:hse:snet:pics:triads4.png?450}}
-
+<img src="https://github.com/bavla/netstat/blob/master/HSE/24/pics/triads4.png" width=500>
 ```
 library(sna)
 triad.census(samplk3) # Directed triad census

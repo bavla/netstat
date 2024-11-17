@@ -24,7 +24,7 @@ In the code on the slides, LaTeX replaces ' with ´ - pay attention if copying c
   1. [Code from Matrices](https://github.com/bavla/netstat/blob/master/HSE/24/csnet2.md)
   1. [Code from Basic models](https://github.com/bavla/netstat/blob/master/HSE/24/csnet3.md)
   1. [Code from Patterns](https://github.com/bavla/netstat/blob/master/HSE/24/csnet4.md)
-  1. [Code from Statistics](http://vladowiki.fmf.uni-lj.si/doku.php?id=ru:hse:snet:csnet6)
+  1. [Code from Statistics](https://github.com/bavla/netstat/blob/master/HSE/24/csnet5.md)
 
 
 [netStat](../2024.md) 

@@ -592,8 +592,13 @@ Pseudo-R^2 Measures:
 </code>
 
 
-======  ======
-\\
+```
+
+<hr/>
+
+[HSE](../2024.md); [Docs](doc.md)
+
+
 
 
 

@@ -938,8 +938,13 @@ R package [[https://cran.r-project.org/web/packages/markovchain/|markovchain]].
   * Transition matrix from a given text determined by consecutive letters pairs. Generate random text. 
 
 
-======  ======
-\\
+```
+
+<hr/>
+
+[HSE](../2024.md); [Docs](doc.md)
+
+
 
 
 

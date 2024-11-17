@@ -730,7 +730,7 @@ $3 0.0000000 0.0000000 0.6666667 0.0000000 0.3333333
 $4 0.0000000 0.0000000 0.0000000 0.0000000 1.0000000
 ```
 
-[[..:snet:dat:mc|Additional data]]
+[Additional data](https://github.com/bavla/netstat/blob/master/HSE/24/mc.dm)
 
 ### Computing
 

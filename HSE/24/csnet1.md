@@ -1,9 +1,9 @@
-# ====== Code from Random ======
+# Code from Random 
 
-===== Current value of a changing quantity in the computer =====
+## Current value of a changing quantity in the computer
 
 Different quantities in the computer are unpredictably changing and could serve as a source of randomness. Most of them are very difficult to access from high-level programming languages such as R. A good candidate is the system time
-<code>
+```
 > t <- Sys.time()
 > t
 [1] "2022-08-14 23:17:59 CEST"
@@ -33,16 +33,16 @@ Time difference of 30.37726 secs
 > t <- as.POSIXct(T,tz="GMT")
 > as.numeric(t)
 [1] 14
-</code>
+```
 In R, the Sys.time() counts the seconds from January 1, 1970. For many possible applications, the changes in seconds are too slow.
 
 Recently two R libraries were developed that provide access to time at the level of nanoseconds: [[https://github.com/eddelbuettel/nanotime|nanotime]] and [[https://dirk.eddelbuettel.com/code/rcpp.cctz.html|RcppCCTZ]]. They are based on the 64 bit representation of integers.
-<code>
+```
 > install.packages("RcppCCTZ")
 > install.packages("nanotime")
-</code>
+```
 Let's try!
-<code>
+```
 > library(nanotime)
 > library(bit64)
 > t <- Sys.time()
@@ -52,11 +52,11 @@ Let's try!
 > as.integer64(v)
 integer64
 [1] 1660442525739342000
-</code>
+```
 The last three places are 0 - Windows provides time stamps at the level of microseconds.
 
 We could use Sys.time() values for throwing dice in an interactive game. Changing fast are last 3 or 4 places.
-<code>
+```
 > k <- 6
 > repeat{
 +   a <- readline("Throw - press ENTER (yes) or s and ENTER (stop)")
@@ -89,12 +89,12 @@ integer64
 [1] 1660517391795778000
 [1] 5
 ...
-</code>
+```
 A more serious application is a random initialization of some parameter in a program.
 
-===== Wichmann and Hill's generator =====
+## Wichmann and Hill's generator
 
-<code>
+```
 > WichHill <- function(n){
 +    output <- numeric(n)
 +    seed <- get(".WHseed",env=.WH)
@@ -117,12 +117,12 @@ A more serious application is a random initialization of some parameter in a pro
 > hist(r,prob=TRUE)
 > r <- WichHill(100000)
 > hist(r,prob=TRUE)
-</code>
+```
 
 
-===== Basic generators in R =====
+## Basic generators in R
 
-<code>
+```
 RNGkind()
 set.seed(2018)
 .Random.seed[1:6]
@@ -133,9 +133,9 @@ runif(6)
 RNGkind("Super")
 RNGkind()
 .Random.seed[1:6]
-</code>
+```
 
-<code>
+```
 > RNGkind()
 [1] "Mersenne-Twister" "Inversion"       
 > set.seed(2018)
@@ -153,11 +153,11 @@ RNGkind()
 [1] "Super-Duper" "Inversion"  
 > .Random.seed[1:6]
 [1]         402  1572731790 -1300846921          NA          NA          NA
-</code>
+```
 
-===== Uniform and Bernoulli distribution =====
+## Uniform and Bernoulli distribution
 
-<code>
+```
 > random <- function() {return(runif(1,0,1))}
 > dice <- function(n=6) {return(1+trunc(n*random()))}
 > Bernoulli <- function(p) {if(random()<=p) return(1) else return(0)}
@@ -183,12 +183,12 @@ s
 s
    0    1 
 6672 3328 
-</code>
+```
 
-===== Geometric distribution =====
+## Geometric distribution
 
 
-<code>
+```
 > geometric <- function(p){
 +   if (p>=1) return(1)
 +   if (p<=0) return(Inf)
@@ -206,12 +206,12 @@ s
 > t <- table(s)
 > x <- as.numeric(names(t))
 > plot(x,t,pch=16,cex=0.7)
-</code> 
+``` 
 
-===== Tabelaric distribution =====
+## Tabelaric distribution
 
 
-<code>
+```
 > tabelaR <- function(p){
 +   r <- random(); k <- 0;
 +   while (r >= 0) {k <- k+1; r <- r - p[k]}
@@ -230,12 +230,12 @@ s
 s
   fri   mon   thu   tue   wed 
 11127 11114 22403 22015 33341 
-</code>
+```
 
-===== Poisson distribution =====
+## Poisson distribution
 
 
-<code>
+```
 > PoissonRnd <- function(lambda){
 +   k <- 0; p <- exp(-lambda); r <- random()-p
 +   while(r > 0) {k <- k+1; p <- p*lambda/k; r <- r-p}
@@ -253,31 +253,31 @@ s
 z
    0    1    2    3    4 
 7430 2204  324   38    4 
-</code>
+```
 
 
-===== Uniform continuous distribution =====
+## Uniform continuous distribution
 
-<code>
+```
 > uniformRnd <- function(a,b) {a+random()*(b-a)}
 > n <- 100000; s <- numeric(n)
 > for(i in 1:n) s[i] <- uniformRnd(75,100)
 > hist(s,prob=TRUE)
-</code>
+```
 
-===== (Negative) exponential distribution =====
+## (Negative) exponential distribution
 
-<code>
+```
 > exponRnd <- function(lambda) {return(-log(1-random())/lambda)} 
 > n <- 100000; s <- numeric(n)
 > for(i in 1:n) s[i] <- exponRnd(1.5)
 > hist(s,prob=TRUE); lines(density(s),col="red")
-</code>
+```
 
-===== Cauchy distribution =====
+## Cauchy distribution
 
 
-<code>
+```
 > cauchyRnd <- function(a=1,b=0) {tan(pi*(random()-0.5))/a + b}
 > n <- 20; s <- numeric(n)
 > for(i in 1:n) s[i] <- cauchyRnd()
@@ -286,11 +286,11 @@ z
  [7]  1.4703372  0.1900819  0.2629615  2.9184602 -0.1944157  6.6547234
 [13] -0.3956465 -0.4921238  0.4071398 -8.2433149 -0.6530219  0.2205136
 [19]  0.1589820 -0.5175836
-</code>
+```
 
-===== von Neumann rejection method =====
+## von Neumann rejection method
 Triangle { (0,0), (1,1), (2,0) }
-<code>
+```
 > vonNeumann <- function(a,b,G,g,...){
 +   repeat { s <- a + random()*(b-a)
 +     if (G*random()<=g(s,...)) return(s)
@@ -303,10 +303,10 @@ Triangle { (0,0), (1,1), (2,0) }
 > n <- 100000; s <- numeric(n)
 > for(i in 1:n) s[i] <- vonNeumann(-0.5,2.5,1,triang)
 > hist(s,prob=TRUE); lines(density(s),col="red",lw=2)
-</code>
-===== Normal or Gaussian distribution =====
+```
+## Normal or Gaussian distribution 
 
-<code>
+```
 > gaussRnd <- function(st=1,m=0,s=1){
 +   if (st==0){new <- TRUE; .Gauss <<- list(m=m,s=s,n=new,r=0)}
 +   else {m <- .Gauss$m; s <- .Gauss$s; new <- .Gauss$n }
@@ -319,22 +319,22 @@ Triangle { (0,0), (1,1), (2,0) }
 > n <- 100000; s <- numeric(n); t <- gaussRnd(0,175,10)
 > for(i in 1:n) s[i] <- gaussRnd()
 > hist(s,prob=TRUE); lines(density(s),col="red",lw=2)
-</code>
+```
 
-===== Multidimensional normal distribution =====
+## Multidimensional normal distribution
 
-<code> 
+``` 
 > multinormal <- function(T){return(t(t(T)%*%rnorm(dim(T)[1])))}
 > data(longley); R <- cor(longley); T <- chol(R); pairs(longley)
 > n <- 2000; s <- NULL;
 > for (i in 1:n) s <- rbind(s,multinormal(T))
 > pairs(s)
-</code>
+```
 
-===== Random 3D direction =====
+## Random 3D direction
 
 
-<code>
+```
 > dir3D<-function(){return(c(2*pi*random(),acos(1-2*random())))}
 > vector3D <- function(dir){
 +   return( c( sin(dir[2])*cos(dir[1]), sin(dir[2])*sin(dir[1]), cos(dir[2]) ))
@@ -347,14 +347,14 @@ Triangle { (0,0), (1,1), (2,0) }
 + }
 > setwd("C:/Users/batagelj/Documents/papers/2018/moskva/NetR/nets/test")
 > points3D(500)
-</code>
+```
  
 To view the file ''sphere.net'' use Pajek.
 
 
-===== Levy flights =====
+## Levy flights
 
-<code>
+```
 > direction <- function() {phi <- 2*pi*random(); return(c(cos(phi),sin(phi)))}
 >
 > # Brown motion
@@ -370,11 +370,11 @@ To view the file ''sphere.net'' use Pajek.
 > x <- c(0,0); n <- 500; s <- matrix(0,nrow=n,ncol=2); s[1,] <- x
 > for (i in 2:n) {x <- x + cauchyRnd(0.1)*direction(); s[i,] <- x}
 > plot(s,pch=16,col="red"); lines(s)
-</code>
+```
 
-===== Uniform distribution in multidimensional ellipsoid =====
+## Uniform distribution in multidimensional ellipsoid
 
-<code>
+```
 > elipsoid <- function(T){
 +   m <- dim(T)[1]; r <- random()^(1/m)
 +   x <- rnorm(m); y <- x*r/sqrt(sum(x^2))
@@ -395,11 +395,11 @@ To view the file ''sphere.net'' use Pajek.
 > n <- 500; s <- matrix(0,nrow=n,ncol=m)
 > for (i in 1:n) s[i,] <- elipsoid(T)
 > pairs(s)
-</code>
+```
 
-===== Shuffle =====
+## Shuffle
 
-<code>
+```
 > shuffle <- function(x){
 +   n <- length(x)
 +   for ( i in n:2 ){j <- dice(i)
@@ -413,11 +413,11 @@ To view the file ''sphere.net'' use Pajek.
 ● ⇑ ⇐ ⇓ ⇙ ⇒ ⇘ ⇗ ⇖ 
 ⇖ ⇐ ⇒ ⇗ ● ⇑ ⇓ ⇘ ⇙ 
 ⇗ ⇒ ⇓ ● ⇐ ⇖ ⇙ ⇑ ⇘ 
-</code>
+```
  
-===== Sample =====
+## Sample
 
-<code>
+```
 > sampleN <- function(n,m){
 +   k <- 0; s <- integer(m)
 +   for(i in 0:n) if ((n-i)*random() < m-k) {
@@ -431,12 +431,12 @@ To view the file ''sphere.net'' use Pajek.
 9 12 27 41 44 45 48 49 53 54 71 77 78 82 97 
 12 24 33 36 37 44 49 52 54 58 67 72 73 79 84 
 1 5 15 26 49 53 54 58 61 74 76 84 92 93 97 
-</code>
+```
 
-===== Number π =====
+## Number π 
 
 
-<code>
+```
 > k <- 0; n <- 2000; u <- integer(n)
 > for(i in 1:n){
 +   if (random()^2+random()^2 < 1) k <- k+1;
@@ -444,16 +444,16 @@ To view the file ''sphere.net'' use Pajek.
 > p <- u/seq(n)*4
 > plot(p,pch=20,cex=0.8)
 > lines(c(-10,n),c(pi,pi),col="red")
-</code>
+```
 
-===== Cube =====
+## Cube
 
 Average distance between two random points in a unit cube.
 
 {{ru:hse:snet:pics:answercube.png}}
 
 [[http://mathworld.wolfram.com/HypercubeLinePicking.html|MathWorld]]
-<code>
+```
 > n <- 100000; t <- 0.6617
 > x <- matrix(runif(3*n),byrow=FALSE,nrow=n)
 > y <- matrix(runif(3*n),byrow=FALSE,nrow=n) 
@@ -468,10 +468,10 @@ Average distance between two random points in a unit cube.
 I = 0.6619123 within error 0.001121217 with probability 0.997
 > plot(1:n,a,pch=16,cex=0.5,ylim=c(0.66,0.665))
 > lines(c(-n/20,n),c(t,t),col="red",lw=2)
-</code>
-===== Sandokan =====
+```
+## Sandokan 
 
-<code>
+```
 > sandokan <- function(n,m=-1,r=100){
 +   if (m<0) m <- n
 +   s <- integer(r)
@@ -524,13 +524,13 @@ I = 0.6619123 within error 0.001121217 with probability 0.997
 > pdf("sandokan.pdf")
 > picture1(teo,s,ylim=c(820,835))
 > dev.off()
-</code>
+```
 
-===== Monte Carlo in statistics =====
+## Monte Carlo in statistics
 
 Variates X1 and X2 have standard normal distribution. Estimate the expected value of their absolute difference.
 
-<code>
+```
 > N <- 10000
 > x1 <- rnorm(N); x2 <- rnorm(N); y <- abs(x1-x2)
 > print(theta.hat <- mean(y))
@@ -552,12 +552,12 @@ Variates X1 and X2 have standard normal distribution. Estimate the expected valu
 [1] 1.128379
 > print(se <- sqrt((2-4/pi)/N))
 [1] 0.0008525025
-</code>
+```
 
-===== Resampling =====
+## Resampling
 
 Approximating a distribution F by the sample
-<code>
+```
 > n <- 20
 > mu <- 175; sigma <- 10; a <- 130; b <- 220
 > x <- sort(rnorm(n,mean=mu,sd=sigma))
@@ -565,11 +565,11 @@ Approximating a distribution F by the sample
 > tit <- paste("N(",mu,",",sigma,"), n=",n,sep="")
 > curve(pnorm(x,mean=mu,sd=sigma),a,b,lwd=2,main=tit,ylab="p")
 > points(x,y,pch=16,col="red")
-</code>
+```
 
-===== Bootstrap =====
+## Bootstrap
 
-<code>
+```
 > library(bootstrap)
 > plot(law82$LSAT,law82$GPA)
 > points(law$LSAT,law$GPA,pch=16,col='Red')
@@ -592,11 +592,12 @@ Approximating a distribution F by the sample
 [1] -0.005145919
 > print(se.theta.star <- sd(theta.star))
 [1] 0.1302567
-</code>
+```
 
+<hr/>
 
-======  ======
-\\
+[HSE](../README.md); [Docs](docs.md)
+
 
 
 

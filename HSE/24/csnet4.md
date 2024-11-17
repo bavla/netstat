@@ -174,8 +174,13 @@ PS. I just noticed that the Orca's authors prepared also an R package [[https://
   * program in R a call to Pajek to search for selected fragments in a given network and import the results in R. [[notes:runr|example]]
   * program in R graphlet distances
 
+```
 
-\\
+<hr/>
+
+[HSE](../2024.md); [Docs](doc.md)
+
+
 
 
 

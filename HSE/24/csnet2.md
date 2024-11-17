@@ -614,7 +614,7 @@ Kelvin Lancaster: Mathematical Economics.
 > cat(k,":",y,"=",sum(y),"\n"); k <- k+1; y <- y%*%P1
 ```
 
-<img src="https://github.com/bavla/netstat/blob/master/HSE/24/pics/q.png" width=400>
+<img src="https://github.com/bavla/netstat/blob/master/HSE/24/pics/Q.png" width=400>
 
 ```
 > Q <- rbind(

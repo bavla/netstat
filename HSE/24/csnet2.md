@@ -1,11 +1,11 @@
-# ====== Code for Matrices ======
+# Code for Matrices
 
 
 
 
-===== Operations =====
+## Operations
 
-<code>
+```
 > r <- 2
 > '%Pf+%' <- function(a,b){return(min(a,b))}
 > '%Pf*%' <- function(a,b){return((a^r+b^r)^(1/r))}
@@ -13,15 +13,15 @@
 [1] 3
 > 3 %Pf*% 4
 [1] 5
-</code>
+```
 
-===== Semiring library =====
+## Semiring library
 
 [[https://github.com/bavla/semirings/|Github / semirings]]
 
-==== Library ====
+### Library
 
-<code>
+```
 > Sr.set <- function(sr="combinatorial",r=2){
 +   if(sr=="combinatorial"){
 +     Sr.zero <<- 0; Sr.one <<- 1; Sr.absorption <<- FALSE
@@ -149,14 +149,12 @@
 +   for (i in 1:n) cat(A[i,],"\n",file=net)
 +   close(net)
 + }
-> 
- 
-</code>
+```
 
-==== Examples ====
+### Examples
 
 
-<code>
+```
 > setwd("C:/Users/batagelj/Documents/papers/2018/moskva/NetR/nets")
 > source("https://github.com/bavla/semirings/raw/master/semirings.R")
 > Sr.set("shortpaths")
@@ -177,11 +175,11 @@
 > a <- c(1,0,5,2); b <- c(3,2,0,4)
 > cbind(a,b,c=a %[+]% b)
 > cbind(a,b,c=a %[.]% b)
-</code>
+```
 
-{{ru:hse:snet:pics:semi.png?400}}
+<img src="https://github.com/bavla/netstat/blob/master/HSE/24/pics/semi.png" width=400>
 
-<code>
+```
 > w <- c(
 +   0, 2, 3,  5, 0, 0,  0, 0, 0,
 +   0, 0, 0,  2, 4, 0,  0, 0, 0,
@@ -229,7 +227,7 @@ v6   8  10  11   1   4   0   3  6 Inf
 v7   5   7   8   9  11  16   0 13 Inf
 v8 Inf Inf Inf Inf Inf Inf Inf  0 Inf
 v9  10  12  13   3   6   2   5  8   0
-</code>
+```
 <html><!--
 ==== Canibals ====
 
@@ -253,10 +251,12 @@ Two missionaries and two cannibals reach the left bank of a river simultaneously
 --></html>
 
 [[notes:net:allp|All paths]] in Python.
-===== Betweenness =====
+
+## Betweenness 
 
 [[https://github.com/bavla/semirings/|Github / Betweenness]]
-<code>
+
+```
 > mat.geodesics <- function(m)
 + { n <- nrow(m)
 +   md <- m; md[m==0] <- Inf
@@ -291,9 +291,9 @@ Two missionaries and two cannibals reach the left bank of a river simultaneously
 > 
 > vec.betweenness <- function(m)
 + { mt <- mat.geodesics(m); return(vec.Betweenness(mt$dis,m$tcnt)) }
-</code>
+```
 
-<code>
+```
 > library(sna)
 > setwd("C:/Users/batagelj/Documents/papers/2018/moskva/NetR/nets")
 > source("https://github.com/bavla/semirings/raw/master/betweenness.R")
@@ -347,12 +347,12 @@ $cnt
 > b <- vec.betweenness(g)
 > b
 [1] 0.00000000 0.34523810 0.05952381 0.16666667 0.16666667 0.11904762 0.11904762 0.30952381
-</code>
+```
 
-===== Pitts Russian Rivers =====
+## Pitts Russian Rivers
 
 Unpack in ''/rivers'' the data from [[pajek:data:conv:pitts|Data set]].
-<code>
+```
 > library(sna)
 > setwd("C:/Users/batagelj/Documents/papers/2018/moskva/NetR/nets/rivers")
 > source("https://github.com/bavla/semirings/raw/master/betweenness.R")
@@ -361,14 +361,15 @@ Unpack in ''/rivers'' the data from [[pajek:data:conv:pitts|Data set]].
 [1] "na"           "vertex.names" "x"            "y"            "z"           
 > R <- as.matrix(pitts); nam <- rownames(R)
 > x <- pitts %v% "x"; y <- pitts %v% "y"
-</code>
+```
 
 {{ru:hse:snet:pics:brjansk.jpg?200}} {{ru:hse:snet:pics:dorogobuz.jpg?200}} {{ru:hse:snet:pics:elec.jpg?200}} {{ru:hse:snet:pics:murom.jpg?200}} 
 
 {{ru:hse:snet:pics:smolensk.jpg?200}} {{ru:hse:snet:pics:velikij_novgorod.jpg?200}} {{ru:hse:snet:pics:vjazma.jpg?200}} {{ru:hse:snet:pics:vladimir.jpg?200}}
 
-==== Binary ====
-<code>
+### Binary
+
+```
 > Geo <- mat.geodesics(R)
 > Gcl <- vec.Closeness(Geo$dis); names(Gcl) <- nam
 > Gbw <- vec.Betweenness(Geo$dis,Geo$cnt); names(Gbw) <- nam
@@ -416,9 +417,10 @@ Unpack in ''/rivers'' the data from [[pajek:data:conv:pitts|Data set]].
  Bolgar                 0.000000000 0.1900000
 > plot(Gbw,Gcl,pch=16,col="red",xlim=c(-0.02,0.35),main="Pitts - binary")
 > text(Gbw,Gcl,nam,cex=0.5)
-</code>
-==== Distance ====
-<code>
+```
+### Distance
+
+```
 > mat.dist <- function(R,x,y){
 +   n <- nrow(R); D <- R
 +   for(i in 1:n) { for(j in 1:n) {
@@ -473,22 +475,22 @@ Unpack in ''/rivers'' the data from [[pajek:data:conv:pitts|Data set]].
  Bolgar                 0.000000000 0.07328784
 > plot(Dbw,Dcl,pch=16,col="red",xlim=c(-0.02,0.24),main="Pitts - distance")
 > text(Dbw,Dcl,nam,cex=0.5)
-</code>
+```
 
-==== Labels in Cyrillic ====
+### Labels in Cyrillic
 
-<code>
+```
 > A <- read.table("pitts.nam",header=FALSE,skip=2)
 > namCy <- as.vector(A$V2)
 > Encoding(namCy) <- "UTF-8"
 > plot(Dbw,Dcl,pch=16,col="red",xlim=c(-0.02,0.24),main="Pitts - distance")
 > text(Dbw,Dcl,namCy,cex=0.5)
-</code>
+```
 
-==== Closeness and betweenness in Sna ====
+### Closeness and betweenness in Sna
 
 Sna does not take weights into account.
-<code>
+```
 > Dis <- as.network(D)
 > library(sna)
 > (Rc <- closeness(pitts))
@@ -511,11 +513,11 @@ Sna does not take weights into account.
 [13] 104.20476 223.87143  61.66667 417.19048  66.00000   2.00000   6.00000 123.36667  21.50000  34.13333 220.96667 113.66667
 [25]   0.00000  58.33333  22.66667  28.26667  17.13333 144.10476  13.43333 157.60000  79.00000 493.70476 479.60476  90.52381
 [37]   6.00000  34.34286  27.33333
-</code>
+```
 
-===== Transitions =====
+## Transitions
 
-<code>
+```
 > P <- rbind(
 +   c(0.0, 0.8, 0.0, 0.0, 0.2),
 +   c(0.0, 0.0, 0.5, 0.0, 0.5),
@@ -593,16 +595,16 @@ S5  1 0.0 0.0 0.0 0.0 0.0
 S6  0 0.0 0.0 0.0 0.0 0.0
 > plot.sociomatrix(P1)
 > gplot(P1,displaylabels=TRUE,diag=TRUE,edge.curve=0.1,loop.cex=4,edge.lwd=10)
-</code>
+```
 
-{{ru:hse:snet:pics:p1.png?400}}
+<img src="https://github.com/bavla/netstat/blob/master/HSE/24/pics/p1.png" width=400>
 
 Rows with sum different from 1; zero sum. 
 
 Kelvin Lancaster: Mathematical Economics.
 [[https://www.amazon.com/Mathematical-Economics-Dover-Computer-Science/dp/0486653919|Dover]], 2011
 
-<code>
+```
 > P1[5,1] <- 1.18
 > P1
 > plot.sociomatrix(P1)
@@ -610,11 +612,11 @@ Kelvin Lancaster: Mathematical Economics.
 > x <- c(10000,0,0,0,0,0)
 > y <- x; k <- 0
 > cat(k,":",y,"=",sum(y),"\n"); k <- k+1; y <- y%*%P1
-</code>
+```
 
-{{ru:hse:snet:pics:q.png?400}}
+<img src="https://github.com/bavla/netstat/blob/master/HSE/24/pics/q.png" width=400>
 
-<code>
+```
 > Q <- rbind(
 +   c(0.0, 0.0, 0.2, 0.8, 0.0, 0.0, 0.0, 0.0, 0.0), 
 +   c(0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0), 
@@ -667,15 +669,15 @@ Kelvin Lancaster: Mathematical Economics.
 23 0 0 0 0 0 0 0 5192.308 4807.692 
 > cat(k,y,"\n"); k <- k+1; y <- y%*%Q
 24 5480.769 4519.231 0 0 0 0 0 0 0 
-</code>
+```
 
-===== Markov chains =====
+## Markov chains
 
-==== Data ====
+### Data 
 
 Pics: [[http://vladowiki.fmf.uni-lj.si/lib/exe/fetch.php?media=ru:hse:snet:pics:roberts1.jpg|Roberts1]]; [[http://vladowiki.fmf.uni-lj.si/lib/exe/fetch.php?media=ru:hse:snet:pics:roberts2.jpg|Roberts2]]
  
-<code>
+```
 > setwd("C:/Users/batagelj/Documents/papers/2018/moskva/NetR/nets")
 > library(sna)
 > # pasture
@@ -724,15 +726,15 @@ $1 0.6666667 0.0000000 0.3333333 0.0000000 0.0000000
 $2 0.0000000 0.6666667 0.0000000 0.3333333 0.0000000
 $3 0.0000000 0.0000000 0.6666667 0.0000000 0.3333333
 $4 0.0000000 0.0000000 0.0000000 0.0000000 1.0000000
-</code>
+```
 
 [[..:snet:dat:mc|Additional data]]
 
-==== Computing ====
+### Computing
 
 
 
-<code>
+```
 > setwd("C:/Users/batagelj/Documents/papers/2018/moskva/NetR/nets")
 > library(sna)
 > p <- c(0,0,1)
@@ -772,9 +774,9 @@ $4 0.0000000 0.0000000 0.0000000 0.0000000 1.0000000
 > (q <- q %*% S) 
      hot moderate cool
 [1,] 0.4      0.4  0.2
-</code>
+```
 
-<code>
+```
 # fixed point of stable chain
 n <- nrow(S)
 A <- t(S)-diag(n); A[n,] <- rep(1,n)
@@ -813,9 +815,9 @@ cool     2.571429 2.571429    5
 [1] 8.326673e-17
 > max(abs(S %*% W - W))
 [1] 5.551115e-17
-</code>
+```
 
-<code>
+```
 source("https://github.com/bavla/semirings/raw/master/semirings.R")
 gplot(G,displaylabels=TRUE,diag=TRUE,loop.cex=3)
 n <- 5; m <- 2
@@ -852,13 +854,13 @@ $3 0.0000000 0.3333333
 $1 0.9333333 0.06666667
 $2 0.8000000 0.20000000
 $3 0.5333333 0.46666667
-</code>
+```
 
-=== Frog ===
+#### Frog
 
-{{ru:hse:snet:pics:frog.png?400}}
+<img src="https://github.com/bavla/netstat/blob/master/HSE/24/pics/frog.png" width=400>
 
-<code>
+```
 > library(sna)
 > MC2 <- c(
 +  0 ,  1 ,  0 ,  0 ,  0 ,  0 ,  0 ,
@@ -925,12 +927,12 @@ L6 0.00 0.0
 L4 0.6666667 0.3333333
 L5 0.3333333 0.6666667
 L6 0.6666667 0.3333333 
-</code>
+```
 
 R package [[https://cran.r-project.org/web/packages/markovchain/|markovchain]].
 
 
-===== To do =====
+### To do
 
   * Add row/col names to results 
   * Implement shrinking of absorbing states in MC (done June 2, 2018)
@@ -938,7 +940,7 @@ R package [[https://cran.r-project.org/web/packages/markovchain/|markovchain]].
   * Transition matrix from a given text determined by consecutive letters pairs. Generate random text. 
 
 
-```
+
 
 <hr/>
 

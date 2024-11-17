@@ -2,12 +2,13 @@
 For the personal use of students only.
 ## Slides 
 
-  1. [Info](http://vladowiki.fmf.uni-lj.si/lib/exe/fetch.php?media=ru:hse:snet:pdf:NA2-0.pdf)
-  1. [Random](http://vladowiki.fmf.uni-lj.si/lib/exe/fetch.php?media=ru:hse:snet:pdf:NA2-1.pdf)
-  1. [Networks and matrices](http://vladowiki.fmf.uni-lj.si/lib/exe/fetch.php?media=ru:hse:snet:pdf:NA2-2.pdf)
-  1. [Basic Models](http://vladowiki.fmf.uni-lj.si/lib/exe/fetch.php?media=ru:hse:snet:pdf:NA2-3.pdf) 
-  1. [Patterns](http://vladowiki.fmf.uni-lj.si/lib/exe/fetch.php?media=ru:hse:snet:pdf:NA2-4.pdf) 
-  1. [Statistics](http://vladowiki.fmf.uni-lj.si/lib/exe/fetch.php?media=ru:hse:snet:pdf:NA2-5.pdf) 
+
+  1. [Info](https://github.com/bavla/netstat/blob/master/HSE/24/pdf/NA2-0.pdf)
+  1. [Random](https://github.com/bavla/netstat/blob/master/HSE/24/pdf/NA2-1.pdf)
+  1. [Networks and matrices](https://github.com/bavla/netstat/blob/master/HSE/24/pdf/NA2-2.pdf)
+  1. [Basic Models](https://github.com/bavla/netstat/blob/master/HSE/24/pdf/NA2-3.pdf) 
+  1. [Patterns](https://github.com/bavla/netstat/blob/master/HSE/24/pdf/NA2-4.pdf) 
+  1. [Statistics](https://github.com/bavla/netstat/blob/master/HSE/24/pdf/NA2-5.pdf) 
 
 ## Recordings 
 

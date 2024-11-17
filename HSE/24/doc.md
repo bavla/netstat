@@ -21,7 +21,7 @@ For the personal use of students only.
 In the code on the slides, LaTeX replaces ' with ´ - pay attention if copying code from slides. 
 
   1. [Code from Random](https://github.com/bavla/netstat/blob/master/HSE/24/csnet1.md)
-  1. [Code from Matrices](http://vladowiki.fmf.uni-lj.si/doku.php?id=ru:hse:snet:csnet2)
+  1. [Code from Matrices](https://github.com/bavla/netstat/blob/master/HSE/24/csnet2.md)
   1. [Code from Basic models](http://vladowiki.fmf.uni-lj.si/doku.php?id=ru:hse:snet:csnet3)
   1. [Code from Patterns](http://vladowiki.fmf.uni-lj.si/doku.php?id=ru:hse:snet:csnet4)
   1. [Code from Statistics](http://vladowiki.fmf.uni-lj.si/doku.php?id=ru:hse:snet:csnet6)

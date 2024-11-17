@@ -597,7 +597,7 @@ S6  0 0.0 0.0 0.0 0.0 0.0
 > gplot(P1,displaylabels=TRUE,diag=TRUE,edge.curve=0.1,loop.cex=4,edge.lwd=10)
 ```
 
-<img src="https://github.com/bavla/netstat/blob/master/HSE/24/pics/p1.png" width=400>
+<img src="https://github.com/bavla/netstat/blob/master/HSE/24/pics/P1.png" width=400>
 
 Rows with sum different from 1; zero sum. 
 

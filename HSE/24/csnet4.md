@@ -1,29 +1,28 @@
-# ====== Patterns ======
+# Patterns
 
 
-===== Dyadic census =====
+## Dyadic census
 
-<code>
+```
 library(statnet)
 data(samplk)
 gplot(samplk3,gmode="digraph")
 dyad.census(samplk3) # M,A,N counts
 dyad.census(network(samplk3,gmode="graph") # No As in undirected graphs
-</code>
+```
 
 
-===== Triadic census =====
+## Triadic census
 
 {{ru:hse:snet:pics:triads4.png?450}}
 
-<code>
+```
 library(sna)
 triad.census(samplk3) # Directed triad census
 triad.census(samplk3,mode="graph") # Undirected triad census
+```
 
-</code>
-
-===== Pattern search / Pajek =====
+## Pattern search / Pajek
 
 [[http://vlado.fmf.uni-lj.si/pub/networks/data/esna/ragusa.htm|Ragusa genealogy]]
 
@@ -38,9 +37,9 @@ triad.census(samplk3,mode="graph") # Undirected triad census
   * Networks/Fragments (First in Second)
   * Macro/Repeat last command [Fix Second Network] [15]
 
-===== Counting with matrices =====
+## Counting with matrices
 
-<code>
+```
 > library(statnet)
 > data(florentine)
 > A <- as.matrix(flomarriage)
@@ -62,27 +61,27 @@ triad.census(samplk3,mode="graph") # Undirected triad census
 > (F3 <- as.numeric(d1[L[,1]] %*% d1[L[,2]] - 3*F2))
 > (F4 <- sum(d*(d-1)*(d-2))/6)
 > (F4 <- d %*% ((d-1)*(d-2))/6)
-</code>
+```
 
 
-===== Orca =====
+## Orca
 
 {{ru:hse:snet:pics:graphlets.png?700}}
 
 A graphlet census of a given graph can be computed using program [[http://www.biolab.si/supp/orca/|orca]]. Download the ''orca.zip'' file and extract the compiled version for windows ''orca.exe'' into directory of your choice ''orcaDir''. Details about the program orca are available in the  [[https://academic.oup.com/bioinformatics/article/30/4/559/205331|paper]].
 
 Here is the partition of graphlets types to corresponding graphs G<sub>i</sub> (both shifted for 1 - in R we start counting with 1):
-<code>
+```
 p <- c(
  1, 2, 2, 3, 4, 4, 5, 5, 6, 7,  7, 7, 8, 8, 9,10,10,10,11,11, 
 11,11,12,12,13,13,13,14,14,14, 14,15,15,15,16,17,17,17,17,18,
 18,18,18,19,19,20,20,20,20,21, 21,22,22,22,23,23,24,24,24,25,
 25,25,26,26,26,27,27,27,28,28, 29,29,30 )
-</code>
+```
 
 The input to program ''orca'' is a text file with numbers n (number of nodes)and m (number of edges) in the first line followed by
 list of end-nodes of edges, each pair in its own line:
-<code>
+```
 100 1000
 41 67
 34 0
@@ -91,13 +90,13 @@ list of end-nodes of edges, each pair in its own line:
 62 64
 5 45
 ...
-</code> 
+```
 **Attention:** nodes are numbered from 0 on.
 
 
  
 Here we show how we can run the program ''orca'' from R:
-<code>
+```
 > orcaDir <- "C:/Users/batagelj/Documents/papers/2018/moskva/NetR/progs/orca"
 > orcaRun <- function(k=5,orcaData,orcaRes="orca.res"){
 +   cmnd <- paste('"',orcaDir,'/orca.exe" ',k,' ',orcaData,' ',orcaRes,sep='')
@@ -129,10 +128,10 @@ n2 16 255  88 32 3574 2256 1604  212 270 410  849 257  90  82   9
 n3 25 366 238 62 4362 5534 2144 1142 717 534 1480 908 168 232  18
 n4 24 356 221 55 4337 5268 2109 1019 655 541 1308 816 151 173  16
 n5 14 240  66 25 3232 1786 1651  139 236 405  700 156  81  63   6
-</code>
+```
 
 To convert an sna network into ''orca'' file we can use the following function in R:
-<code>
+```
 > library(sna)
 > data(flo)
 > gplot(flo,displaylabels=TRUE,usearrows=FALSE)
@@ -166,15 +165,16 @@ Ridolfi       3  8  2  1  9 11  7  0  0  2   5   1   0   0   0
 Salviati      2  5  1  0  5  5  9  0  0  1   0   0   0   0   0
 Strozzi       4  4  4  2  9 10  0  1  0  1   2   2   0   1   0
 Tornabuoni    3  8  2  1  9  9  9  0  1  0   5   1   0   0   0
-</code>
+```
 
 PS. I just noticed that the Orca's authors prepared also an R package [[https://cran.r-project.org/web/packages/orca/index.html|orca]], [[https://www.jstatsoft.org/article/view/v071i10/v71i10.pdf|paper]]. Take the above lines as an example how to link separate programs with R.  
-===== To do =====
+
+## To do
 
   * program in R a call to Pajek to search for selected fragments in a given network and import the results in R. [[notes:runr|example]]
   * program in R graphlet distances
 
-```
+
 
 <hr/>
 

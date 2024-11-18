@@ -1,6 +1,6 @@
-# ====== Markov chains data ======
+# Markov chains data
 
-===== Black Friday =====
+## Black Friday
 
 [The Black Friday Puzzle](https://www.countbayesie.com/blog/2015/11/21/the-black-friday-puzzle-understanding-markov-chains)
 

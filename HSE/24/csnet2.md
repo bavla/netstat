@@ -364,7 +364,7 @@ Unpack in ''/rivers'' the data from [Data set](pajek:data:conv:pitts).
 ```
 
 
-<img src="https://github.com/bavla/netstat/blob/master/HSE/24/pics/brjansk.jpg" width=200> <img src="https://github.com/bavla/netstat/blob/master/HSE/24/pics/Dorogobuž.jpg" width=200> <img src="https://github.com/bavla/netstat/blob/master/HSE/24/pics/Elec.jpg" width=200> <img src="https://github.com/bavla/netstat/blob/master/HSE/24/pics/Murom.jpg" width=200>
+<img src="https://github.com/bavla/netstat/blob/master/HSE/24/pics/Brjansk.jpg" width=200> <img src="https://github.com/bavla/netstat/blob/master/HSE/24/pics/Dorogobuž.jpg" width=200> <img src="https://github.com/bavla/netstat/blob/master/HSE/24/pics/Elec.jpg" width=200> <img src="https://github.com/bavla/netstat/blob/master/HSE/24/pics/Murom.jpg" width=200>
 
 <img src="https://github.com/bavla/netstat/blob/master/HSE/24/pics/Smolensk.jpg" width=200> <img src="https://github.com/bavla/netstat/blob/master/HSE/24/pics/Velikij_Novgorod.jpg" width=200> <img src="https://github.com/bavla/netstat/blob/master/HSE/24/pics/Vjazma.jpg" width=200> <img src="https://github.com/bavla/netstat/blob/master/HSE/24/pics/Vladimir.jpg" width=200>
 
